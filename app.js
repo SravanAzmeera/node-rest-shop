@@ -7,6 +7,7 @@ const mongoose = require('mongoose');   //importing mongoose modules
  const productRoutes = require('./api/Routes/products');     //extensions
  const orderRoutes = require('./api/Routes/orders');
 
+mongoose.set('strictQuery', false);
 mongoose.connect(
 
     `mongodb+srv://sravanazmeera:sravan7093@cluster0.1d0yafy.mongodb.net/`
