@@ -4,16 +4,15 @@ const morgan = require('morgan')  //morgan is a middleware that logs HTTP reques
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');   //importing mongoose modules
 
-const productRoutes = require('./api/routes/products');     //extensions
-const orderRoutes = require('./api/routes/products');
+ const productRoutes = require('./api/Routes/products');     //extensions
+ const orderRoutes = require('./api/Routes/orders');
 
 mongoose.connect(
 
-    'mongodb+srv://sravanazmeera: '+ process.env.MONGO_ATLAS_PW +' @cluster0.1d0yafy.mongodb.net/?retryWrites=true&w=majority'
-
+    `mongodb+srv://sravanazmeera:sravan7093@cluster0.1d0yafy.mongodb.net/`
 
 );
-
+ 
 //.then(() => console.log('MongoDB Connected...'))
 //.catch((err) => console.log(err))
 
@@ -33,9 +32,9 @@ app.use((req, res, next) => {
          }
          next();
 });
-
+ 
 // Routes which should handle requests
-app.use('/products', productRoutes);   //import productRoutes
+ app.use('/products', productRoutes);   //import productRoutes
 app.use('/orders', orderRoutes);  //import orderRoutes
 
 app.use((req, res, next) => {
@@ -51,6 +50,6 @@ app.use((error, req, res, next) => {
             message: error.message
         }
     });
-});
+}); 
 
 module.exports = app;

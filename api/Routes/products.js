@@ -86,7 +86,7 @@ routes.get('/:productId', (req, res, next) => {   //get method database to give 
         .status(404)
         .json({message: 'No valid entry found for provided ID'});
       }
-    })
+    }) 
     .catch(err => {
       console.log(err);
       res.status(500).json({error: err});
