@@ -43,6 +43,14 @@ app.use((req, res, next) => {
     next(error);
 })
 
+app.get("/", (req, res, next)=>{
+    res.json({
+        name:"hello",
+        message:"i am working"
+    })
+})
+
+
 app.use((error, req, res, next) => {
     res.status(error.ststus || 500);
     res.json({

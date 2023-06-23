@@ -65,7 +65,7 @@ routes.post('/', (req, res, next) => {     //post method use post the data in da
    })
      .catch(err => console.log(err));   
 });
-  
+   
 routes.get('/:productId', (req, res, next) => {   //get method database to give the data to client
   const id = req.params.productId;
   Product.findById(id)
@@ -81,7 +81,7 @@ routes.get('/:productId', (req, res, next) => {   //get method database to give 
               url: 'http://localhost:3000/products'
            }
         });
-      } else { 
+      } else {  
         res
         .status(404)
         .json({message: 'No valid entry found for provided ID'});
